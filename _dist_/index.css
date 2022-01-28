@@ -111,8 +111,12 @@ h1{
         width: 80%;
     }
 
-    .images img{
-        width: 80%;
+    .images{
+        width: 100%;
+    }
+
+    .imgContainer{
+        width: 90%;
     }
 }
 
