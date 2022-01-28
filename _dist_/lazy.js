@@ -1,3 +1,5 @@
+let imgCargadas = 0;
+
 const isIntersecting = (entry) =>{
     return entry.isIntersecting
 }
@@ -9,6 +11,8 @@ const loadImage = async (entry) =>{
     img.src = await url;
     
     //Dejar de observar
+    imgCargadas++;
+    console.log(`Imagenes cargadas ${imgCargadas} 👁`);
     observer.unobserve(containerImage);
 
     containerImage.removeAttribute('class');
