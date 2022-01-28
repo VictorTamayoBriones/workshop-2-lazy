@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { registerImage } from './lazy';
 
 const btnAdd = document.querySelector('#add');
 const container = document.querySelector('#images');
 
-const randomNumber = () => Math.floor(Math.random() * 124 );
+const randomNumber = () => Math.floor(Math.random() * 123 ) * 1;
 
 const noImagesText = () => {
     const message = document.createElement('h3');
@@ -13,9 +14,15 @@ const noImagesText = () => {
 }
 
 const createImage = (image) => {
+    const divImage = document.createElement('div');
     const newImage = document.createElement('img');
+
+    divImage.setAttribute('class', 'imgContainer');
     newImage.setAttribute('src', image);
-    container.appendChild(newImage);
+
+    divImage.appendChild(newImage);
+    container.appendChild(divImage);
+    registerImage(newImage);
 }
 
 const getImage = async () =>{
