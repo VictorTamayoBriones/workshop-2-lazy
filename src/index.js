@@ -3,6 +3,7 @@ import { registerImage } from './lazy';
 
 const btnAdd = document.querySelector('#add');
 const container = document.querySelector('#images');
+const btnClear = document.querySelector('#clear');
 
 const randomNumber = () => Math.floor(Math.random() * 123 ) * 1;
 
@@ -33,11 +34,12 @@ const getImage = async () =>{
     verifyImages();
 }
 
-const verifyImages = ()=>{
+export const verifyImages = ()=>{
     const images = document.querySelectorAll('img');
     const message = document.querySelector('.message');
 
     images.length === 0 ? noImagesText() : message ? document.body.removeChild(message) : null;
+    images.length != 0 ? btnClear.setAttribute('class', 'clarActive') : images.length === 0 ? btnClear.removeAttribute('class') : null;
 }
 
 btnAdd.addEventListener('click', getImage);
