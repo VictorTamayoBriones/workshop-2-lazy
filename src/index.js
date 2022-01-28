@@ -5,6 +5,8 @@ const btnAdd = document.querySelector('#add');
 const container = document.querySelector('#images');
 const btnClear = document.querySelector('#clear');
 
+export let imgCalled = 0;
+
 const randomNumber = () => Math.floor(Math.random() * 123 ) * 1;
 
 const noImagesText = () => {
@@ -24,6 +26,8 @@ const createImage = (image) => {
     newImage.setAttribute('data-src', image);
     divImage.appendChild(newImage);
 
+    imgCalled ++;
+    console.log(`Imagenes llamadas ${imgCalled} 📲`);
     registerImage(divImage);
 }
 
