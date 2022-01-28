@@ -15,13 +15,14 @@ const noImagesText = () => {
 
 const createImage = (image) => {
     const divImage = document.createElement('div');
-    const newImage = document.createElement('img');
-
     divImage.setAttribute('class', 'imgLoader');
-    newImage.setAttribute('data-src', image);
-
-    divImage.appendChild(newImage);
     container.appendChild(divImage);
+    
+    
+    const newImage = document.createElement('img');
+    newImage.setAttribute('data-src', image);
+    divImage.appendChild(newImage);
+
     registerImage(divImage);
 }
 
