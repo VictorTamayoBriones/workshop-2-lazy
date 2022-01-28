@@ -24,6 +24,7 @@ h1{
     -webkit-text-stroke: 2px orange;
     letter-spacing: 2px;
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    animation: shadowAnimate 5s infinite;
 }
 
 .add{
@@ -61,3 +62,44 @@ h1{
     font-size: 20px;
     letter-spacing: 2px;
 }
+
+@keyframes shadowAnimate {
+    0%{
+        text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    }
+    25%{
+        text-shadow: -3px -3px 0px rgba(0, 0, 0, 0.3);
+    }
+    50%{
+        text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    }
+    75%{
+        text-shadow: -3px -3px 0px rgba(0, 0, 0, 0.3);
+    }
+    100%{
+        text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+@media (max-width: 800px){
+    .add{
+        width: 80%;
+    }
+
+    .images img{
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px){
+    h1{
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+
+    .message{
+        text-align: center;
+    }
+}
+
