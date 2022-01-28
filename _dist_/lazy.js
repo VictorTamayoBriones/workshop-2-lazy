@@ -2,17 +2,20 @@ const isIntersecting = (entry) =>{
     return entry.isIntersecting
 }
 
-const action = (entry) =>{
-    const nodo = entry.target;
-    console.log('Zorro visible');
-
+const loadImage = (entry) =>{
+    const containerImage = entry.target;
+    const img = containerImage.firstChild;
+    const url = img.dataset.src;
+    img.src = url;
+    containerImage.removeAttribute('class');
+    containerImage.setAttribute('class', 'imgContainer');
     //Dejar de observar
-    observer.unobserve(nodo);
+    observer.unobserve(containerImage);
 }
 
 const observer = new IntersectionObserver((entries)=>{
     entries.filter(isIntersecting)
-        .forEach(action);
+        .forEach(loadImage);
 });
 
 export const registerImage = (img) =>{

@@ -17,12 +17,12 @@ const createImage = (image) => {
     const divImage = document.createElement('div');
     const newImage = document.createElement('img');
 
-    divImage.setAttribute('class', 'imgContainer');
-    newImage.setAttribute('src', image);
+    divImage.setAttribute('class', 'imgLoader');
+    newImage.setAttribute('data-src', image);
 
     divImage.appendChild(newImage);
     container.appendChild(divImage);
-    registerImage(newImage);
+    registerImage(divImage);
 }
 
 const getImage = async () =>{

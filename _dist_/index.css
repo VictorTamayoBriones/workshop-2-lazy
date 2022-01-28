@@ -51,8 +51,7 @@ h1{
 }
 
 .images img{
-    width: 30%;
-    margin: 20px auto;
+    width: 100%;
     border-radius: 5px;
     box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.5) ;
 }
@@ -61,6 +60,21 @@ h1{
     color: #7c7c7c;
     font-size: 20px;
     letter-spacing: 2px;
+}
+
+.imgLoader{
+    border-radius: 5px;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.5) ;
+    margin: 20px auto;
+    width: 30%;
+    height: 200px;
+    background: #ccc;
+}
+
+.imgContainer{
+    width: 30%;
+    height: max-content;
+    margin: 20px auto;
 }
 
 @keyframes shadowAnimate {
